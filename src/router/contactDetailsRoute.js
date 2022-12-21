@@ -12,8 +12,9 @@ router.use(bodyParser.json());
 router.post('/api/v1/contacts',async(req,res)=>{
     try{
         const arr = req.body;
-        
+
          for(let i=0; i<arr.length; i++){
+            
             await contactsModel.create({
                 Name:arr[i].Name,
                 Designation: arr[i].Designation,
@@ -21,7 +22,8 @@ router.post('/api/v1/contacts',async(req,res)=>{
                 Industry: arr[i].Industry,
                 Email: arr[i].Email,
                 PhoneNumber:arr[i].PhoneNumber,
-                Country: arr[i].Country
+                Country:arr[i].Country,
+                userId:req.user
             });
          }
 
@@ -90,13 +92,11 @@ router.get("/api/v1/contacts/:email",async(req,res)=>{
 
 
 
-delete contacts
+//delete contacts
 
 router.delete('api/v1/contactdelete',async(req,res)=>{
 
     const datadelete=contactsModel.delete({_id:req.user})
 })
-
-
 
 module.exports = router

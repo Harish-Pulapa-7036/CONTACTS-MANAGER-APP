@@ -15,7 +15,7 @@ app.use('/api/v1/contacts', (req, res, next) => {
         const token = req.headers.authorization;
         if (token) {
             const decoded = jwt.verify(token, 'secret');
-            req.user = decoded.data;
+            req.user = decoded.id;
             next();
         }
         else {
