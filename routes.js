@@ -13,16 +13,14 @@ router.use(bodyParser.json());
 router.post('api/v1/import',async(req,res)=>{
     try{
         const data=await contactsModel.find({userId:req.user})
- if(data){
-    
- }
 
- else{
+
+ 
     const usercontact= await contactsModel.insertMany({
         contacts:req.body,
         userId:req.user
     })
- }
+
     
 
     res.send("ok")
