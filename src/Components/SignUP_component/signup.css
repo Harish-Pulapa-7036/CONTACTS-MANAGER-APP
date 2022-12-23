@@ -1,0 +1,64 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+#sign-up-container{
+    height: 80vh;
+    width: 100%;
+    background: #F5F5F5
+}
+.image-box2{
+    height: 100px;
+    width: 100px;
+    margin: 0px;
+}
+.image-box1{
+    height: 140px;
+    width: 140px;
+}
+#top-section,#bottom-section{
+    display: flex;
+}
+/* #middle{
+    height:60vh;
+    width:60vw;
+    background-color: #CEF3FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px auto;
+} */
+h1{
+
+    font-style: normal;
+    color: #7D8CC4;
+    align-items: center;
+}
+.input,button{
+    height: 34px;
+    width: 250px;
+    border-radius:4px;
+    margin-bottom: 16px;
+}
+/* img{
+    height: 100%;
+    width: 100%;
+} */
+button{
+    background: #7D8CC4
+}
+#elp1{
+    position: relative;
+    left: 980px;
+    top:150px;
+}
+#elp2{
+    position: relative;
+    left:320px;
+    bottom:115px; 
+}
+#elp22{
+    position: relative;
+    left:1295px;
+    top: 6px;
+}
