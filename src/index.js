@@ -9,6 +9,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app=express();
 app.use(cors());
+const port = process.env.PORT || 8000;
 
 app.use('/api/v1/contacts', (req, res, next) => {
     try {
@@ -46,4 +47,4 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser: true, useUnifiedTopology: true },()=>{
     console.log("connected to db")
 })
-app.listen(8000, () => console.log("App listening on port 8000"))
+app.listen(port, () => console.log(`App listening on port ${port}`))
