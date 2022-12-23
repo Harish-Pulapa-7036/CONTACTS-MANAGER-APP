@@ -42,7 +42,7 @@ router.post('/api/v1/contacts',async(req,res)=>{
 
 router.get("/api/v1/contacts",async(req,res)=>{
     try{
-        const users = await contactsModel.find();
+        const users = await contactsModel.find({userId:req.user});
         if(users.length){
             res.status(200).json({
                 status:"success",
@@ -52,14 +52,12 @@ router.get("/api/v1/contacts",async(req,res)=>{
         else{
             res.status(404).json({
                 status:"failed",
-                message:e.message
             })
         }
     }
     catch(e){
         res.status(400).json({
             status:"failed",
-            message:e.message
         })
     }
 });
@@ -93,10 +91,24 @@ router.get("/api/v1/contacts/:email",async(req,res)=>{
 
 
 //delete contacts
+router.delete("/api/v1/contacts/:id",async(req,res)=>{
+    console.log(req.params.id)
+    try{
 
-router.delete('api/v1/contactdelete',async(req,res)=>{
-
-    const datadelete=contactsModel.delete({_id:req.user})
+        const finddelete=await contactsModel.find({_id:req.params.id})
+        const datadelete=await contactsModel.deleteOne({_id:req.params.id})
+        return res.json({
+            status:"deleted",
+            finddelete
+        })
+    }
+    catch(e){
+        return res.json({
+            status:"failed",
+            message:e.message
+        })
+        
+    }
 })
 
 module.exports = router

@@ -8,7 +8,7 @@ const contactsSchema = new mongoose.Schema({
     Email: {type:String},
     PhoneNumber:{type:String},
     Country:{type:String},
-    userId: { type: String, ref: "User" }
+    userId: { type: String, ref: "UserDetails" }
 });
 
 const contactsModel = new mongoose.model("contacts", contactsSchema);

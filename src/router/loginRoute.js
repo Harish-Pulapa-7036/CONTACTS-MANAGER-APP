@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 
 router.post("/signUp", async(req, res) => {
     const { userEmail, password } = req.body
-    console.log(req.body);
+    
     try {
 
         const data = await UserDetails.findOne({ userEmail: userEmail })
@@ -24,7 +24,8 @@ router.post("/signUp", async(req, res) => {
                         userEmail,
                         password: hash
                     })
-                    res.json({message: "Congratulations signUp sucessfull!",data})
+                    res.json({message: "Congratulations signUp sucessfull!",data});
+                    console.log(data);
                 }
             })
         }
