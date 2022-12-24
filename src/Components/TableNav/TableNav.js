@@ -76,7 +76,7 @@ const {postContacts} = useContext(context);
                         document.location.reload();
                       }}
                     >
-                      Cancel
+                      OK
                     </button>
                   </div>
                 </>
