@@ -131,20 +131,6 @@ useEffect(()=>{
 
   return (
     <context.Provider
-      // value={
-      //   {
-      //     contacts,
-      //     postContacts,
-      //     signUpUser,
-      //     signInUser,
-      //     email,
-      //     fetchContacts,
-      //     deleteContacts,
-      //     checkedArr,
-      //     setCheckedArr,
-      //     myFunction
-      //   }
-      // }
       value ={
         {signInUser,
           signUpUser,
