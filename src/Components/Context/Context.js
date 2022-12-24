@@ -85,7 +85,7 @@ export const ContextProvider = (props) => {
 
 useEffect(()=>{
   fetchContacts()
-},[token])
+},[])
 
   
   
