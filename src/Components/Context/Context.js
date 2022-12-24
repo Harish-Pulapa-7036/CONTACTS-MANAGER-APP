@@ -17,6 +17,7 @@ export const ContextProvider = (props) => {
         console.log(res.data.token);
         if (res.data.message === "success") {
           localStorage.setItem("token", res.data.token)
+          
           alert("signin Sucessull!")
           navigate("/contacts");
           document.location.reload();
@@ -57,20 +58,21 @@ export const ContextProvider = (props) => {
   const postContacts = async (contactdata) => {
     console.log(contactdata);
     console.log(token);
-    return await axios
+    await axios
       .post("https://contact-manager-backend-g1ec.onrender.com/api/v1/contacts",contactdata,config)
       .then((res) => console.log(res))
       .catch((err) => {
         console.log(err.response.data.message)
         // console.log(err)
       })
+      
   }
 
 
   // -------------fetching the contacts----------;
 
-  const fetchContacts = () => {
-    axios
+  const fetchContacts = async() => {
+  return await axios
       .get("https://contact-manager-backend-g1ec.onrender.com/api/v1/contacts",config)
       .then((res) => {
         //console.log(res.data.users);
@@ -81,11 +83,12 @@ export const ContextProvider = (props) => {
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    
-    fetchContacts()
-  },[]);
-
+ if(localStorage.getItem("token")) {
+  fetchContacts()
+ }
+// useEffect(()=>{
+ 
+// },[])
 
   
   

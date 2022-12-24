@@ -80,7 +80,9 @@ const Table = () => {
     return (
         <div>
             <table id="myTable" className="table table-hover">
-                <thead>
+                <thead >
+                    
+                    <tr key="tableheade">
                     <input type="checkbox" id="checkAll"
                      onClick={(checkCheckboxAll)} 
                      />
@@ -92,6 +94,7 @@ const Table = () => {
                     <th scope="col">Phone</th>
                     <th scope="col">Country</th>
                     <th scope="col">Action</th>
+                    </tr>
                 </thead>
                 <tbody className='table-body'>
                     {contactperpages.map((item, i) => {

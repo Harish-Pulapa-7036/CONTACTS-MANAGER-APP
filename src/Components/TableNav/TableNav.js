@@ -145,6 +145,7 @@ const {postContacts} = useContext(context);
             console.log(result.data);
             
             postContacts(result.data);
+            fetchContacts()
              document.location.reload()
             
         
