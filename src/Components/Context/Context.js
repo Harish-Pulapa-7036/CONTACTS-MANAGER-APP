@@ -83,12 +83,9 @@ export const ContextProvider = (props) => {
       .catch((err) => console.log(err));
   };
 
- if(localStorage.getItem("token")) {
+useEffect(()=>{
   fetchContacts()
- }
-// useEffect(()=>{
- 
-// },[])
+},[token])
 
   
   
