@@ -124,7 +124,7 @@ const Table = () => {
                                         <img src={Edit} alt="Edit" id="edit"/>
                                         <img src={Delete} alt="Delete" id="delete" onClick={() => {
                                             deleteContacts(item._id);
-                                            document.location.reload();
+                                            // document.location.reload();
                                         }} />
                                     </td>
                                 </tr>
