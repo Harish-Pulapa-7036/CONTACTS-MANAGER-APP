@@ -33,7 +33,7 @@ const NavBar = ()=>{
                     <p onClick={() => {
                          localStorage.removeItem("token");
                          navigate("/")
-                        document.location.reload();
+                        // document.location.reload();
                     }}>Log Out</p>
                 </div>
             </div>
