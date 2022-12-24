@@ -71,8 +71,8 @@ export const ContextProvider = (props) => {
 
   // -------------fetching the contacts----------;
 
-  const fetchContacts = async() => {
-  return await axios
+  const fetchContacts = () => {
+   axios
       .get("https://contact-manager-backend-g1ec.onrender.com/api/v1/contacts",config)
       .then((res) => {
         //console.log(res.data.users);
